@@ -44,6 +44,9 @@ func goAndroidBind(libName string, gobind string, pkgs []*packages.Package, targ
 	if bindBootClasspath != "" {
 		cmd.Args = append(cmd.Args, "-bootclasspath="+bindBootClasspath)
 	}
+	if libName != "" {
+		cmd.Args = append(cmd.Args, "-libname="+libName)
+	}
 	for _, p := range pkgs {
 		cmd.Args = append(cmd.Args, p.PkgPath)
 	}
