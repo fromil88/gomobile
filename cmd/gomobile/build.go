@@ -236,22 +236,23 @@ func printcmd(format string, args ...interface{}) {
 
 // "Build flags", used by multiple commands.
 var (
-	buildA          bool        // -a
-	buildI          bool        // -i
-	buildN          bool        // -n
-	buildV          bool        // -v
-	buildX          bool        // -x
-	buildO          string      // -o
-	buildGcflags    string      // -gcflags
-	buildLdflags    string      // -ldflags
-	buildTarget     string      // -target
-	buildTrimpath   bool        // -trimpath
-	buildWork       bool        // -work
-	buildCache      string      // -cache
-	buildBundleID   string      // -bundleid
-	buildIOSVersion string      // -iosversion
-	buildAndroidAPI int         // -androidapi
-	buildTags       stringsFlag // -tags
+	buildA            bool        // -a
+	buildI            bool        // -i
+	buildN            bool        // -n
+	buildV            bool        // -v
+	buildX            bool        // -x
+	buildO            string      // -o
+	buildGcflags      string      // -gcflags
+	buildLdflags      string      // -ldflags
+	buildTarget       string      // -target
+	buildTrimpath     bool        // -trimpath
+	buildWork         bool        // -work
+	buildCache        string      // -cache
+	buildBundleID     string      // -bundleid
+	buildIOSVersion   string      // -iosversion
+	buildMacOSVersion string      // -macosversion
+	buildAndroidAPI   int         // -androidapi
+	buildTags         stringsFlag // -tags
 )
 
 func addBuildFlags(cmd *command) {
@@ -261,6 +262,7 @@ func addBuildFlags(cmd *command) {
 	cmd.flag.StringVar(&buildTarget, "target", "android", "")
 	cmd.flag.StringVar(&buildBundleID, "bundleid", "", "")
 	cmd.flag.StringVar(&buildIOSVersion, "iosversion", "13.0", "")
+	cmd.flag.StringVar(&buildMacOSVersion, "macosversion", "10.15", "")
 	cmd.flag.IntVar(&buildAndroidAPI, "androidapi", minAndroidAPI, "")
 
 	cmd.flag.BoolVar(&buildA, "a", false, "")

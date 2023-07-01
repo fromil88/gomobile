@@ -260,6 +260,8 @@ func envInit() (err error) {
 				if arch == "arm64" {
 					cflags += " -fembed-bitcode"
 				}
+
+				cflags += " -mmacosx-version-min=" + buildMacOSVersion
 			default:
 				panic(fmt.Errorf("unknown Apple target: %s/%s", platform, arch))
 			}
