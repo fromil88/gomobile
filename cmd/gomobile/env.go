@@ -158,6 +158,10 @@ func buildEnvInit() (cleanup func(), err error) {
 			return nil, err
 		}
 	}
+	tmpdir, err = filepath.EvalSymlinks(tmpdir)
+	if err != nil {
+		return
+	}
 	if buildX {
 		fmt.Fprintln(xout, "WORK="+tmpdir)
 	}
