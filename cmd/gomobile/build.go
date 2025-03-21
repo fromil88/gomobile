@@ -250,6 +250,7 @@ var (
 	buildTVOSVersion  string      // -tvosversion
 	buildAndroidAPI   int         // -androidapi
 	buildTags         stringsFlag // -tags
+	buildTagsMacOS    stringsFlag // -tags-macos
 	buildVCS          bool        // -buildvcs
 )
 
@@ -268,6 +269,7 @@ func addBuildFlags(cmd *command) {
 	cmd.flag.BoolVar(&buildI, "i", false, "")
 	cmd.flag.BoolVar(&buildTrimpath, "trimpath", false, "")
 	cmd.flag.Var(&buildTags, "tags", "")
+	cmd.flag.Var(&buildTagsMacOS, "tags-macos", "")
 	cmd.flag.BoolVar(&buildVCS, "buildvcs", true, "")
 }
 

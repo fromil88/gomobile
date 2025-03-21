@@ -86,7 +86,7 @@ func platformTags(platform string) []string {
 	case "tvos", "tvossimulator":
 		return []string{"ios", "tvos"}
 	case "macos":
-		return []string{"macos"}
+		return append([]string{"macos"}, buildTagsMacOS...)
 	case "maccatalyst":
 		// Mac Catalyst is a subset of iOS APIs made available on macOS
 		// designed to ease porting apps developed for iPad to macOS.
