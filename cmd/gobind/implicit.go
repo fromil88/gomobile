@@ -5,7 +5,7 @@
 package main
 
 import (
-	_ "github.com/sagernet/gomobile/bind"
-	_ "github.com/sagernet/gomobile/bind/java"
-	_ "github.com/sagernet/gomobile/bind/objc"
+	_ "github.com/fromil88/gomobile/bind"
+	_ "github.com/fromil88/gomobile/bind/java"
+	_ "github.com/fromil88/gomobile/bind/objc"
 )
