@@ -1,4 +1,4 @@
-module github.com/sagernet/gomobile
+module github.com/fromil88/gomobile
 
 go 1.18
 
